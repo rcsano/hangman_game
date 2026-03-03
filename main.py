@@ -53,7 +53,7 @@ def play(word):
         print("Congratulations, you guessed the word! Malupet!")
     else:
         print("Sorry, you ran out of guesses. The word was " + word + ". Next time, pare!")
-        
+
 def display_hangman(tries):
     stages = [  # final state: head, torso, both arms, and both legs
                 """
@@ -127,3 +127,13 @@ def display_hangman(tries):
                 """
     ]
     return stages[tries]
+
+def main():
+    word = get_word()
+    play(word)
+    while input("Do you want to play again? (y/n):").upper() == "Y":
+        word = get_word()
+        play(word)
+
+if __name__ == "__main__":
+    main()
